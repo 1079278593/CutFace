@@ -1,0 +1,29 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#pragma mark - 1.setobjectANDkey 2. objectANDkey  3.同步
+#define NSUserDefaultsSet(id,key) [[NSUserDefaults standardUserDefaults]setObject:id forKey:key]
+#define NSUserDefaultsGet(key) [[NSUserDefaults standardUserDefaults]objectForKey:key]
+#define NSUserDefaultsRemove(key) [[NSUserDefaults standardUserDefaults]removeObjectForKey:key]
+#define NSUserDefaultsSyn [[NSUserDefaults standardUserDefaults]synchronize]
+
+#define KMainScreenWidth [UIScreen mainScreen].bounds.size.width
+#define KMainScreenHeight [UIScreen mainScreen].bounds.size.height
+#define KToolBarHeight 44
+#define KStatusBarHeight 20
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
