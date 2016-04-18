@@ -81,8 +81,9 @@
     UIImage *eyesImage = [Extension cutFace:self.userPhoto.image cutFrame:originFaceInfo.standardFrame];
     
     //很黑：342824  ，一般黑：783f30 ，红润:F09678
-    NSData *imageData = [UIImage matchFaceToModel:eyesImage modelSkinColor:@"783f30"];
-//    eyesImage = [[UIImage alloc]initWithData:imageData];
+    //女模特：D2B195
+    NSData *imageData = [UIImage matchFaceToModel:eyesImage modelSkinColor:@"D2B195"];
+    eyesImage = [[UIImage alloc]initWithData:imageData];
     
     eyesImage = [Extension cutSquareFaceToOvalface:eyesImage];
     //1.获得截取的脸
@@ -193,7 +194,7 @@
         [self.view addSubview:_userfaceView];
         
     }
-    
+    _userfaceView.hidden = YES;
     return _userfaceView;
     
 }
@@ -209,7 +210,7 @@
         [self.view addSubview:_modelfaceView];
         
     }
-    
+    _modelfaceView.hidden = YES;
     return _modelfaceView;
     
 }

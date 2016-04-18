@@ -113,6 +113,18 @@
     [rightBtn addTarget:self action:@selector(rightBtn:) forControlEvents:UIControlEventTouchUpInside];
     rightBtn.backgroundColor = [UIColor lightGrayColor];
 }
+
+-(void)initFaceFrame{
+    
+    //face_frame.png
+    UIImageView *frame = [[UIImageView alloc]init];
+    frame.backgroundColor = [UIColor clearColor];
+    frame.frame = preview.frame;
+    [self.view addSubview:frame];
+    
+    frame.image = [UIImage imageNamed:@"face_frame.png"];
+    
+}
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -121,7 +133,12 @@
     
     [self initCamera];
     
+    [self initFaceFrame];
+    
     [self initNavi];
+    
+    
+    
     
 }
 -(void)viewWillAppear:(BOOL)animated{

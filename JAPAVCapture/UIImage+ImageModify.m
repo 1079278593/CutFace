@@ -49,7 +49,7 @@
             UInt32 color = *currentPixel;
             
             // Blend the ghost with 50% alpha
-            CGFloat faceAlpha = 0.25;
+            CGFloat faceAlpha = 0.35;
             UInt32 newR = R(color) * (1 - faceAlpha) + RGBA.Red * faceAlpha;
             UInt32 newG = G(color) * (1 - faceAlpha) + RGBA.Green * faceAlpha;
             UInt32 newB = B(color) * (1 - faceAlpha) + RGBA.Blue * faceAlpha;
